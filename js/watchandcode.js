@@ -17,6 +17,7 @@ var todoList = {
     todo.completed = !todo.completed;
   },
   toggleAll: function() {
+    console.log("working");
     var totalTodos = this.todos.length;
     var completedTodos = 0;
     
