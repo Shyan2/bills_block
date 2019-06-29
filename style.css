@@ -418,9 +418,23 @@ footer ul li a {
 	background-color: #e3e3e3;
 }
 
+/* todo */
+.cases-links h2 {
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: 600;
+	color: #111;
+	text-transform: uppercase;
+}
 
-
-
+.todo h2 {
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: 600;
+	color: #111;
+	text-align: center;
+	text-transform: uppercase;
+}
 
 
 
