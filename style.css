@@ -419,13 +419,25 @@ footer ul li a {
 }
 
 /* todo */
-.cases-links h2 {
-	font-family: Arial;
-	font-size: 28px;
-	font-weight: 600;
-	color: #111;
-	text-transform: uppercase;
+.todo {
+	width: 100%;
+	height: 500px;
+	background-color: #ccc;
+	display: flex;
 }
+
+.todo div button {
+	width: 100px;
+	height: 35px;
+	outline: none;
+	border: 1px solid #ddd;
+}
+
+.todo div input:focus {
+	box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+	border: 1px solid rgba(255, 0, 0)
+}
+
 
 .todo h2 {
 	font-family: Arial;
@@ -434,8 +446,69 @@ footer ul li a {
 	color: #111;
 	text-align: center;
 	text-transform: uppercase;
+	padding-top: 20px;
 }
 
+
+/* Mimi gallery */
+
+.gallery-links-h2 {
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: 600;
+	color: #111;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 20px;
+}
+
+.gallery-links {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.gallery-img {
+	flex-basis: 90%;
+	margin: 10px;
+}
+
+.gallery-img img {
+	width: 100%;
+}
+
+@media only screen and (min-width: 762px) {
+	.gallery-links-h2 {
+		font-size: 28px;
+	}
+
+	.gallery-img {
+		flex-basis: 300px;
+	}
+}
+
+/* for p5.js */
+.wrapper h2 {
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: 600;
+	color: #111;
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.sketch-holder {
+	margin: 0;
+	display: flex;
+
+	/* This centers our sketch horizontally. */
+	/*justify-content: center;*/
+
+	/* This centers our sketch vertically. */
+	/*align-items: center;*/
+}
 
 
 
