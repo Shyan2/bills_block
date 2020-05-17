@@ -1,15 +1,15 @@
 {
-  "main.css": "/static/css/main.9b7f8682.chunk.css",
-  "main.js": "/static/js/main.02bcf379.chunk.js",
-  "main.js.map": "/static/js/main.02bcf379.chunk.js.map",
-  "static/css/1.e665fe0d.chunk.css": "/static/css/1.e665fe0d.chunk.css",
-  "static/js/1.57c420c5.chunk.js": "/static/js/1.57c420c5.chunk.js",
-  "static/js/1.57c420c5.chunk.js.map": "/static/js/1.57c420c5.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/1.e665fe0d.chunk.css.map": "/static/css/1.e665fe0d.chunk.css.map",
-  "static/css/main.9b7f8682.chunk.css.map": "/static/css/main.9b7f8682.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.44ae8a5dfcf49c0e49e3763debd654c6.js": "/precache-manifest.44ae8a5dfcf49c0e49e3763debd654c6.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/blockgame/static/css/main.9b7f8682.chunk.css",
+  "main.js": "/blockgame/static/js/main.72bbd147.chunk.js",
+  "main.js.map": "/blockgame/static/js/main.72bbd147.chunk.js.map",
+  "static/css/1.e665fe0d.chunk.css": "/blockgame/static/css/1.e665fe0d.chunk.css",
+  "static/js/1.e5c19bbe.chunk.js": "/blockgame/static/js/1.e5c19bbe.chunk.js",
+  "static/js/1.e5c19bbe.chunk.js.map": "/blockgame/static/js/1.e5c19bbe.chunk.js.map",
+  "runtime~main.js": "/blockgame/static/js/runtime~main.53de1b00.js",
+  "runtime~main.js.map": "/blockgame/static/js/runtime~main.53de1b00.js.map",
+  "static/css/main.9b7f8682.chunk.css.map": "/blockgame/static/css/main.9b7f8682.chunk.css.map",
+  "static/css/1.e665fe0d.chunk.css.map": "/blockgame/static/css/1.e665fe0d.chunk.css.map",
+  "index.html": "/blockgame/index.html",
+  "precache-manifest.fd1895fc1fc032fd02c99c1a0daa84c1.js": "/blockgame/precache-manifest.fd1895fc1fc032fd02c99c1a0daa84c1.js",
+  "service-worker.js": "/blockgame/service-worker.js"
 }
