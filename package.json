@@ -1,5 +1,4 @@
 {
-  "homepage": "https://shyan2.github.io/blockgame",
   "name": "eth-marketplace",
   "version": "0.1.0",
   "description": "An Ethereum Marketplace",
@@ -25,6 +24,7 @@
     "truffle-hdwallet-provider": "^1.0.17",
     "web3": "1.0.0-beta.55"
   },
+  "homepage": "https://shyan2.github.io/blockgame",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
