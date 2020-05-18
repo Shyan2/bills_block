@@ -55,7 +55,7 @@ class RoboGameMain extends Component {
                     </div>
                     <ul id="robotList" className="list-group list-group-flush">
                       <li className="list-group-item">
-                        <p>{robot.name}</p>
+                        <p>Robot's name: {robot.name}</p>
                       </li>
                       <li key={key} className="list-group-item py-2">
                         <small className="float-left mt-1 text-muted">
