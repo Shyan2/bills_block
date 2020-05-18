@@ -55,7 +55,13 @@ class RoboGameMain extends Component {
                     </div>
                     <ul id="robotList" className="list-group list-group-flush">
                       <li className="list-group-item">
-                        <p>Robot's name: {robot.name}</p>
+                        <div class="center-image">
+                          <h3>{robot.name}</h3>
+                          <img
+                            alt="robots"
+                            src={`https://robohash.org/ ${robot.name} &300x300`}
+                          />
+                        </div>
                       </li>
                       <li key={key} className="list-group-item py-2">
                         <small className="float-left mt-1 text-muted">
