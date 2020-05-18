@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/BlockGame/precache-manifest.d9d97662ac7b9142474c7bb175fd0f9e.js"
+  "/BlockGame/precache-manifest.e7556d66f1b365dc06609d0d638015c9.js"
 );
 
 workbox.clientsClaim();

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Web3 from "web3";
-import Identicon from "identicon.js";
 import "./App.css";
-import SocialNetwork from "../abis/SocialNetwork.json";
+import RoboGame from "../abis/RoboGame.json";
 import Navbar from "./Navbar";
-import Main from "./Main";
-import Bills from "./Bills";
+//import Main from "./Main";
+import RoboGameMain from "./RoboGameMain";
 
 class App extends Component {
   async componentWillMount() {
@@ -35,52 +34,49 @@ class App extends Component {
     this.setState({ account: accounts[0] }); //first is the one connected with metamask (an array)
     //Network ID
     const networkId = await web3.eth.net.getId();
-    const networkData = SocialNetwork.networks[networkId];
+    const networkData = RoboGame.networks[networkId];
     if (networkData) {
       //console.log(networkId);
-      const socialNetwork = web3.eth.Contract(
-        SocialNetwork.abi,
-        networkData.address
-      );
-      this.setState({ socialNetwork }); //this.setState({ socialNetwork: socialNetwork });
+      const roboGame = web3.eth.Contract(RoboGame.abi, networkData.address);
+      this.setState({ roboGame }); //this.setState({ roboGame: roboGame });
       //call only reads data (no gas), send requires gas
-      const postCount = await socialNetwork.methods.postCount().call();
-      this.setState({ postCount });
-      //console.log(postCount);
+      const robotCount = await roboGame.methods.robotCount().call();
+      this.setState({ robotCount });
+      //console.log(robotCount);
       //Load posts
-      for (var i = 1; i <= postCount; i++) {
-        const post = await socialNetwork.methods.posts(i).call();
+      for (var i = 1; i <= robotCount; i++) {
+        const robot = await roboGame.methods.robots(i).call();
         this.setState({
-          posts: [...this.state.posts, post], //adds post to the end of the posts array, new in es6 and react
+          robots: [...this.state.robots, robot], //adds post to the end of the posts array, new in es6 and react
         });
       }
-      //console.log({ posts: this.state.posts });
+      //console.log({ posts: this.state.robots });
 
-      //sort posts, show highest tipped posts first
+      //sort robots, show highest levelled robots first
       this.setState({
-        posts: this.state.posts.sort((a, b) => b.tipAmount - a.tipAmount),
+        robots: this.state.robots.sort((a, b) => b.level - a.level),
       });
       this.setState({ loading: false });
     } else {
-      window.alert("SocialNetwork contract not deployed to detected network.");
+      window.alert("RoboGame contract not deployed to detected network.");
     }
   }
 
-  createPost(content) {
+  createRobot(name) {
     this.setState({ loading: true });
-    this.state.socialNetwork.methods
-      .createPost(content)
+    this.state.roboGame.methods
+      .createRobot(name)
       .send({ from: this.state.account })
       .once("receipt", (receipt) => {
         this.setState({ loading: false });
       });
   }
 
-  tipPost(id, tipAmount) {
+  levelRobot(id, level) {
     this.setState({ loading: true });
-    this.state.socialNetwork.methods
-      .tipPost(id)
-      .send({ from: this.state.account, value: tipAmount })
+    this.state.roboGame.methods
+      .levelRobot(id)
+      .send({ from: this.state.account, value: level })
       .once("receipt", (receipt) => {
         this.setState({ loading: false });
       });
@@ -90,14 +86,14 @@ class App extends Component {
     super(props);
     this.state = {
       account: "",
-      socialNetwork: null,
-      postCount: 0,
-      posts: [],
+      roboGame: null,
+      robotCount: 0,
+      robots: [],
       loading: true,
     };
 
-    this.createPost = this.createPost.bind(this);
-    this.tipPost = this.tipPost.bind(this);
+    this.createRobot = this.createRobot.bind(this);
+    this.levelRobot = this.levelRobot.bind(this);
   }
 
   render() {
@@ -109,17 +105,12 @@ class App extends Component {
             <p>Loading...</p>
           </div>
         ) : (
-          <Main
-            posts={this.state.posts}
-            createPost={this.createPost}
-            tipPost={this.tipPost}
+          <RoboGameMain
+            robots={this.state.robots}
+            createRobot={this.createRobot}
+            levelRobot={this.levelRobot}
           />
         )}
-        <Main
-          posts={this.state.posts}
-          createPost={this.createPost}
-          tipPost={this.tipPost}
-        />
       </div>
     );
   }
