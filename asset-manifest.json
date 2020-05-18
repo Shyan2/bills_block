@@ -1,15 +1,15 @@
 {
-  "main.css": "/BlockGame/static/css/main.0a0de9ca.chunk.css",
-  "main.js": "/BlockGame/static/js/main.80e3b42b.chunk.js",
-  "main.js.map": "/BlockGame/static/js/main.80e3b42b.chunk.js.map",
+  "main.css": "/BlockGame/static/css/main.aa20c062.chunk.css",
+  "main.js": "/BlockGame/static/js/main.bb703471.chunk.js",
+  "main.js.map": "/BlockGame/static/js/main.bb703471.chunk.js.map",
   "static/css/1.e665fe0d.chunk.css": "/BlockGame/static/css/1.e665fe0d.chunk.css",
-  "static/js/1.a22e8b1f.chunk.js": "/BlockGame/static/js/1.a22e8b1f.chunk.js",
-  "static/js/1.a22e8b1f.chunk.js.map": "/BlockGame/static/js/1.a22e8b1f.chunk.js.map",
+  "static/js/1.72bda35d.chunk.js": "/BlockGame/static/js/1.72bda35d.chunk.js",
+  "static/js/1.72bda35d.chunk.js.map": "/BlockGame/static/js/1.72bda35d.chunk.js.map",
   "runtime~main.js": "/BlockGame/static/js/runtime~main.f73479f1.js",
   "runtime~main.js.map": "/BlockGame/static/js/runtime~main.f73479f1.js.map",
   "static/css/1.e665fe0d.chunk.css.map": "/BlockGame/static/css/1.e665fe0d.chunk.css.map",
-  "static/css/main.0a0de9ca.chunk.css.map": "/BlockGame/static/css/main.0a0de9ca.chunk.css.map",
+  "static/css/main.aa20c062.chunk.css.map": "/BlockGame/static/css/main.aa20c062.chunk.css.map",
   "index.html": "/BlockGame/index.html",
-  "precache-manifest.10ed6513f7b35ddc5fc0db86071179a9.js": "/BlockGame/precache-manifest.10ed6513f7b35ddc5fc0db86071179a9.js",
+  "precache-manifest.6dd518ce243b742393c0dde31de759f8.js": "/BlockGame/precache-manifest.6dd518ce243b742393c0dde31de759f8.js",
   "service-worker.js": "/BlockGame/service-worker.js"
 }
