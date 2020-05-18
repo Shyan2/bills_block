@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/BlockGame/static/js/runtime~main.f73479f1.js"
   },
   {
-    "revision": "c0859ec1884d5eba6373",
-    "url": "/BlockGame/static/js/main.c0859ec1.chunk.js"
+    "revision": "4eaa880fed8e5f73724b",
+    "url": "/BlockGame/static/js/main.4eaa880f.chunk.js"
   },
   {
     "revision": "a22e8b1f77ab023fb8f4",
     "url": "/BlockGame/static/js/1.a22e8b1f.chunk.js"
   },
   {
-    "revision": "c0859ec1884d5eba6373",
+    "revision": "4eaa880fed8e5f73724b",
     "url": "/BlockGame/static/css/main.0a0de9ca.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/BlockGame/static/css/1.e665fe0d.chunk.css"
   },
   {
-    "revision": "2688196baa2e4336c157734fca73fd0d",
+    "revision": "20ee13a414b23fc1f785cfcc4dbdbfc4",
     "url": "/BlockGame/index.html"
   }
 ];
