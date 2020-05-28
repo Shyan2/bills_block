@@ -12,7 +12,6 @@ class RoboGameMain extends Component {
             style={{ maxWidth: "500px" }}
           >
             <div className="content mr-auto ml-auto">
-              <p>&nbsp;</p>
               <form
                 onSubmit={(event) => {
                   event.preventDefault();
@@ -55,7 +54,7 @@ class RoboGameMain extends Component {
                     </div>
                     <ul id="robotList" className="list-group list-group-flush">
                       <li className="list-group-item">
-                        <div class="center-image">
+                        <div className="center-image">
                           <h3>{robot.name}</h3>
                           <img
                             alt="robots"

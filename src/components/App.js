@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 import Web3 from "web3";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
 import RoboGame from "../abis/RoboGame.json";
+
 import Navbar from "./Navbar";
-//import Main from "./Main";
 import RoboGameMain from "./RoboGameMain";
+import LogPage from "./LogPage";
+import Bill from "./Bill";
+import Form from "./forms/Form";
+import TableTest from "./TableTest";
+
+import UserForm from "./forms/UserForm";
 
 class App extends Component {
   async componentWillMount() {
@@ -98,19 +106,30 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar account={this.state.account} />
-        {this.state.loading ? (
-          <div id="loader" className="text-center mt-5">
-            <p>Loading...</p>
+      <div className="d-flex justify-content-center">
+        <Router>
+          <Navbar account={this.state.account} />
+          <div className="nav-padding">
+            <Switch>
+              <Route path="/userform" component={UserForm} />
+              <Route path="/TableTest" component={TableTest} />
+              <Route exact path="/log" component={LogPage} />
+              <Route path="/bill" component={Bill} />
+              <Route path="/form" component={Form} />
+              <Route
+                path="/robots"
+                render={(props) => (
+                  <RoboGameMain
+                    {...props}
+                    robots={this.state.robots}
+                    createRobot={this.createRobot}
+                    levelRobot={this.levelRobot}
+                  />
+                )}
+              />
+            </Switch>
           </div>
-        ) : (
-          <RoboGameMain
-            robots={this.state.robots}
-            createRobot={this.createRobot}
-            levelRobot={this.levelRobot}
-          />
-        )}
+        </Router>
       </div>
     );
   }
