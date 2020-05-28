@@ -1,15 +1,15 @@
 {
-  "main.css": "/BlockGame/static/css/main.67259b95.chunk.css",
-  "main.js": "/BlockGame/static/js/main.a9ae3d5e.chunk.js",
-  "main.js.map": "/BlockGame/static/js/main.a9ae3d5e.chunk.js.map",
-  "static/css/1.9ecf75a8.chunk.css": "/BlockGame/static/css/1.9ecf75a8.chunk.css",
-  "static/js/1.8371be35.chunk.js": "/BlockGame/static/js/1.8371be35.chunk.js",
-  "static/js/1.8371be35.chunk.js.map": "/BlockGame/static/js/1.8371be35.chunk.js.map",
-  "runtime~main.js": "/BlockGame/static/js/runtime~main.f73479f1.js",
-  "runtime~main.js.map": "/BlockGame/static/js/runtime~main.f73479f1.js.map",
-  "static/css/1.9ecf75a8.chunk.css.map": "/BlockGame/static/css/1.9ecf75a8.chunk.css.map",
-  "static/css/main.67259b95.chunk.css.map": "/BlockGame/static/css/main.67259b95.chunk.css.map",
-  "index.html": "/BlockGame/index.html",
-  "precache-manifest.bf0ff0ce17cce892af6b583ab0688dab.js": "/BlockGame/precache-manifest.bf0ff0ce17cce892af6b583ab0688dab.js",
-  "service-worker.js": "/BlockGame/service-worker.js"
+  "main.css": "/bills_block/static/css/main.67259b95.chunk.css",
+  "main.js": "/bills_block/static/js/main.0f805d96.chunk.js",
+  "main.js.map": "/bills_block/static/js/main.0f805d96.chunk.js.map",
+  "static/css/1.9ecf75a8.chunk.css": "/bills_block/static/css/1.9ecf75a8.chunk.css",
+  "static/js/1.d478ce4a.chunk.js": "/bills_block/static/js/1.d478ce4a.chunk.js",
+  "static/js/1.d478ce4a.chunk.js.map": "/bills_block/static/js/1.d478ce4a.chunk.js.map",
+  "runtime~main.js": "/bills_block/static/js/runtime~main.107cb4b6.js",
+  "runtime~main.js.map": "/bills_block/static/js/runtime~main.107cb4b6.js.map",
+  "static/css/1.9ecf75a8.chunk.css.map": "/bills_block/static/css/1.9ecf75a8.chunk.css.map",
+  "static/css/main.67259b95.chunk.css.map": "/bills_block/static/css/main.67259b95.chunk.css.map",
+  "index.html": "/bills_block/index.html",
+  "precache-manifest.13dba6d4680c8c5f54058f301a8fda2d.js": "/bills_block/precache-manifest.13dba6d4680c8c5f54058f301a8fda2d.js",
+  "service-worker.js": "/bills_block/service-worker.js"
 }
