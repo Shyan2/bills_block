@@ -1,0 +1,27 @@
+{
+  "status": "REQUEST_SUCCEEDED",
+  "responseTime": 194,
+  "message": [],
+  "Results": {
+    "series": [
+      {
+        "seriesID": "WPU13",
+        "data": [
+          {
+            "year": "2020",
+            "period": "M04",
+            "periodName": "April",
+            "latest": "true",
+            "value": "257.7",
+            "footnotes": [
+              {
+                "code": "P",
+                "text": "Preliminary. All indexes are subject to revision four months after original publication."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

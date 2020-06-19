@@ -1,0 +1,231 @@
+{
+  "status": "REQUEST_SUCCEEDED",
+  "responseTime": 145,
+  "message": [],
+  "Results": {
+    "series": [
+      {
+        "seriesID": "WPU132",
+        "data": [
+          {
+            "year": "2020",
+            "period": "M04",
+            "periodName": "April",
+            "latest": "true",
+            "value": "321.3",
+            "footnotes": [
+              {
+                "code": "P",
+                "text": "Preliminary. All indexes are subject to revision four months after original publication."
+              }
+            ]
+          },
+          {
+            "year": "2020",
+            "period": "M03",
+            "periodName": "March",
+            "value": "318.0",
+            "footnotes": [
+              {
+                "code": "P",
+                "text": "Preliminary. All indexes are subject to revision four months after original publication."
+              }
+            ]
+          },
+          {
+            "year": "2020",
+            "period": "M02",
+            "periodName": "February",
+            "value": "317.7",
+            "footnotes": [
+              {
+                "code": "P",
+                "text": "Preliminary. All indexes are subject to revision four months after original publication."
+              }
+            ]
+          },
+          {
+            "year": "2020",
+            "period": "M01",
+            "periodName": "January",
+            "value": "317.9",
+            "footnotes": [
+              {
+                "code": "P",
+                "text": "Preliminary. All indexes are subject to revision four months after original publication."
+              }
+            ]
+          },
+          {
+            "year": "2019",
+            "period": "M12",
+            "periodName": "December",
+            "value": "311.4",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M11",
+            "periodName": "November",
+            "value": "310.7",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M10",
+            "periodName": "October",
+            "value": "311.3",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M09",
+            "periodName": "September",
+            "value": "310.8",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M08",
+            "periodName": "August",
+            "value": "310.2",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M07",
+            "periodName": "July",
+            "value": "312.1",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M06",
+            "periodName": "June",
+            "value": "311.7",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M05",
+            "periodName": "May",
+            "value": "309.5",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M04",
+            "periodName": "April",
+            "value": "308.1",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M03",
+            "periodName": "March",
+            "value": "305.2",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M02",
+            "periodName": "February",
+            "value": "305.4",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2019",
+            "period": "M01",
+            "periodName": "January",
+            "value": "306.1",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M12",
+            "periodName": "December",
+            "value": "300.5",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M11",
+            "periodName": "November",
+            "value": "300.8",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M10",
+            "periodName": "October",
+            "value": "301.1",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M09",
+            "periodName": "September",
+            "value": "299.3",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M08",
+            "periodName": "August",
+            "value": "299.2",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M07",
+            "periodName": "July",
+            "value": "299.8",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M06",
+            "periodName": "June",
+            "value": "299.7",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M05",
+            "periodName": "May",
+            "value": "297.7",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M04",
+            "periodName": "April",
+            "value": "297.2",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M03",
+            "periodName": "March",
+            "value": "295.6",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M02",
+            "periodName": "February",
+            "value": "295.3",
+            "footnotes": [{}]
+          },
+          {
+            "year": "2018",
+            "period": "M01",
+            "periodName": "January",
+            "value": "294.0",
+            "footnotes": [{}]
+          }
+        ]
+      }
+    ]
+  }
+}
