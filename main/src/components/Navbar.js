@@ -14,9 +14,9 @@ class Navbar extends Component {
           Bill of Quantities
         </a>
         <ul className="nav-links">
-          {/* <Link style={navStyle} to="/TableTest">
-            <li>Table</li>
-          </Link> */}
+          <Link style={navStyle} to="/TableTest">
+            <li>Table test</li>
+          </Link>
           <Link style={navStyle} to="/log">
             <li>Log</li>
           </Link>

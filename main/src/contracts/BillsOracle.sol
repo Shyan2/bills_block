@@ -10,9 +10,6 @@ import "./CallerInterface.sol";
 //https://www.bls.gov/regions/mid-atlantic/data/producerpriceindexengineering_us_table.htm
 //https://www.bls.gov/regions/mid-atlantic/data/producerpriceindexconcrete_us_table.htm
 
-//Get and set functions. For now only get one value
-//address: 0xC85E4ac66c1978C8793705F3ED0716C009DA6ACD
-
 contract BillsOracle is Ownable {
     uint256 private randNonce = 0;
     uint256 private modulus = 1000;

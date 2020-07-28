@@ -9,6 +9,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Grid from "@material-ui/core/Grid";
+import Moment from "react-moment";
 
 const theme = createMuiTheme();
 
@@ -54,12 +55,67 @@ class BillForm extends Component {
                 onChange={this.handleChange("workSection")}
               >
                 <MenuItem value={"Preliminaries"}>Preliminaries</MenuItem>
-                <MenuItem value={"Site works"}>Site works</MenuItem>
-                <MenuItem value={"Demolitions"}>Demolitions</MenuItem>
-                <MenuItem value={"In-situ concrete works"}>
-                  In-situ concrete works
+                <MenuItem value={"Excavating & filling"}>
+                  Excavating & filling
+                </MenuItem>
+                <MenuItem value={"In-situ concrete work"}>
+                  In-situ concrete work
+                </MenuItem>
+                <MenuItem value={"Composite precast concrete"}>
+                  Composite precast concrete
                 </MenuItem>
                 <MenuItem value={"Precast concrete"}>Precast concrete</MenuItem>
+                <MenuItem value={"Masonry"}>Masonry</MenuItem>
+                <MenuItem value={"Carpentry"}>Carpentry</MenuItem>
+                <MenuItem value={"Sheet roof coverings"}>
+                  Sheet roof coverings
+                </MenuItem>
+                <MenuItem value={"Tile and slate roof and wall coverings"}>
+                  Tile and slate roof and wall coverings
+                </MenuItem>
+                <MenuItem value={"General joinery"}>General joinery</MenuItem>
+                <MenuItem value={"Windows, screens and lights"}>
+                  Windows, screens and lights
+                </MenuItem>
+                <MenuItem value={"Doors, shutters and hatches"}>
+                  Doors, shutters and hatches
+                </MenuItem>
+                <MenuItem value={"Stairs, walkways and balustrades"}>
+                  Stairs, walkways and balustrades
+                </MenuItem>
+                <MenuItem value={"Floor, wall, ceiling and roof finishings"}>
+                  Floor, wall, ceiling and roof finishings
+                </MenuItem>
+                <MenuItem value={"Decoration"}>Decoration</MenuItem>
+                <MenuItem value={"Insulation, fire stopping & fire protection"}>
+                  Insulation, fire stopping & fire protection
+                </MenuItem>
+                <MenuItem value={"Furniture, fittings and equipment"}>
+                  Furniture, fittings and equipment
+                </MenuItem>
+                <MenuItem value={"Drainage above ground"}>
+                  Drainage above ground
+                </MenuItem>
+                <MenuItem value={"Drainage below ground"}>
+                  Drainage below ground
+                </MenuItem>
+                <MenuItem value={"Soft landscaping"}>Soft landscaping</MenuItem>
+                <MenuItem value={"Mechanical services"}>
+                  Mechanical services
+                </MenuItem>
+                <MenuItem value={"Electrical services"}>
+                  Electrical services
+                </MenuItem>
+                <MenuItem
+                  value={
+                    "Mechanical, electrical & transportation installations"
+                  }
+                >
+                  Mechanical, electrical & transportation installations
+                </MenuItem>
+                <MenuItem value={"Main contractor's overheads and profit"}>
+                  Main contractor's overheads and profit
+                </MenuItem>
               </Select>
               <FormHelperText>Select Work Section</FormHelperText>
             </FormControl>
@@ -91,15 +147,19 @@ class BillForm extends Component {
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value="">
+                <MenuItem value="m">
                   <em>m</em>
                 </MenuItem>
                 <MenuItem value={"m^2"}>
                   m<sup>2</sup>
                 </MenuItem>
-                <MenuItem value={"num"}>num</MenuItem>
-                <MenuItem value={"weekly"}>weekly</MenuItem>
-                <MenuItem value={"monthly"}>monthly</MenuItem>
+                <MenuItem value={"m^3"}>
+                  m<sup>3</sup>
+                </MenuItem>
+                <MenuItem value={"nr"}>nr</MenuItem>
+                <MenuItem value={"day"}>day</MenuItem>
+                <MenuItem value={"week"}>week</MenuItem>
+                <MenuItem value={"month"}>month</MenuItem>
               </Select>
               <FormHelperText>Select unit</FormHelperText>
             </FormControl>
@@ -117,8 +177,8 @@ class BillForm extends Component {
                 const component = values.component;
                 const itemDescription = values.itemDescription;
                 const unit = values.unit;
-                const baseppi = 50;
-                const ppi = 100;
+                const baseppi = this.props.tempppi;
+                const ppi = this.props.tempppi;
                 this.props.createBill(
                   workSection,
                   component,
@@ -133,7 +193,8 @@ class BillForm extends Component {
                   itemDescription,
                   unit,
                   baseppi,
-                  ppi
+                  ppi,
+                  new Date()
                 );
               }}
             >

@@ -30,7 +30,7 @@ class Bill extends Component {
       },
       method: "get",
     });
-    this.setState({ tempppi: resp.data.price });
+    //this.setState({ tempppi: resp.data.price });
     return resp.data.price;
   }
 
@@ -54,7 +54,9 @@ class Bill extends Component {
     this.setState({ account: accounts[0] }); //first is the one connected with metamask (an array)
     const networkId = await web3.eth.net.getId();
     const networkData = Bills.networks[networkId];
+
     if (networkData) {
+      console.log("Load: ", new Date());
       console.log("Network ID: " + networkId);
       const billQuantity = web3.eth.Contract(Bills.abi, networkData.address);
       console.log("Contract address: " + networkData.address); //contract address
@@ -72,6 +74,7 @@ class Bill extends Component {
         fromBlock: 0,
         toBlock: "latest",
       });
+      console.log(billLog);
 
       const billCreatedLog = await billQuantity.getPastEvents("BillCreated", {
         fromBlock: 0,
@@ -100,7 +103,7 @@ class Bill extends Component {
           bills: [...this.state.bills, bill], //adds bills to the end of the array, new in es6 and react
         });
       }
-
+      console.log("Finish loading: ", new Date());
       //log timestamps
       for (var i = 0; i <= billLog.length - 1; i++) {
         const log = billLog[i];
@@ -199,11 +202,12 @@ class Bill extends Component {
       .createBill(workSection, component, itemDescription, unit, baseppi, ppi)
       .send({ from: this.state.account })
       .on("transactionHash", (hash) => {
-        //console.log(hash);
+        console.log("TRANSACTION TIME: ", new Date());
         this.setState({ hash });
       })
-      .on("confirmation", (confirmationNumber, receipt) => {
+      .once("confirmation", (confirmationNumber, receipt) => {
         console.log("CreateBill confirmation complete.");
+        console.log(new Date());
         //console.log(confirmationNumber, receipt);
         this.setState({ loading: false });
       });
@@ -219,36 +223,26 @@ class Bill extends Component {
       })
       .on("confirmation", (confirmationNumber, receipt) => {
         console.log("setUnitPrice confirmation complete.");
-        console.log(confirmationNumber, receipt);
+        //console.log(confirmationNumber, receipt);
         this.setState({ loading: false });
       });
   }
 
-  // filterCallerEvents() {
-  //   console.log("filterCallerEvents");
-  //   this.state.billQuantity.events.PriceUpdatedEvent(
-  //     { fromBlock: "latest", toBlock: "latest", filter: {} },
-  //     async (err, event) => {
-  //       if (err) {
-  //         console.error("Error on event", err);
-  //       } else {
-  //         console.log(
-  //           // "New PriceUpdated event. ppi: " + event.returnValue.ppiValue
-  //           "New PriceUpdated event.ppi: " + event.returnValues.ppiValue
-  //         );
-  //         this.setState({ tempppi: event.returnValues.ppiValue.toString() });
-  //       }
-  //     }
-  //   );
+  setQuantity(id, newQuantity) {
+    this.setState({ loading: true });
+    this.state.billQuantity.methods
+      .setQuantity(id, newQuantity)
+      .send({ from: this.state.account })
+      .on("transactionHash", (hash) => {
+        //console.log(hash);
+      })
+      .on("confirmation", (confirmationNumber, receipt) => {
+        console.log("setQuantity confirmation complete.");
+        //console.log(confirmationNumnber, receipt);
+        this.setState({ loading: false });
+      });
+  }
 
-  //   this.state.billQuantity.events.ReceivedNewRequestIdEvent(
-  //     { fromBlock: "latest", toBlock: "latest", filter: {} },
-  //     async (err, event) => {
-  //       if (err) console.error("Error on event", err);
-  //       else console.log("Receieve new request ID event");
-  //     }
-  //   );
-  // }
   filterCallerEvents() {
     console.log("filterCallerEvents");
     this.state.billQuantity.once(
@@ -260,9 +254,15 @@ class Bill extends Component {
         } else {
           console.log(
             // "New PriceUpdated event. ppi: " + event.returnValue.ppiValue
-            "New PriceUpdated event.ppi: " + event.returnValues.ppiValue
+            "New PriceUpdated event.ppi: " +
+              event.returnValues.ppiValue / (10 ** 10 * 10)
           );
-          this.setState({ tempppi: event.returnValues.ppiValue.toString() });
+          const ppi =
+            event.returnValues.ppiValue.toString() / (10 ** 10 * 100000000);
+          //why does it go into here 4 times?
+          console.log(ppi);
+          this.setState({ tempppi: ppi });
+          //return event.returnValues.ppiValue.toString();
         }
       }
     );
@@ -277,27 +277,6 @@ class Bill extends Component {
     );
   }
 
-  //BillsOracle.sol functions
-  // filterOracleEvents() {
-  //   console.log("filterOracleEvents");
-  //   this.state.oracleContract.events.GetLatestppi(
-  //     { fromBlock: "latest", toBlock: "latest", filter: {} },
-  //     async (err, event) => {
-  //       if (err) {
-  //         console.error("Error on event", err);
-  //         return;
-  //       } else {
-  //         // console.log("entered filtered oracle events successfully");
-  //         await this.addRequestToQueue(event);
-  //       }
-  //     }
-  //   );
-
-  //   this.state.oracleContract.events.SetLatestppi(async (err, event) => {
-  //     if (err) console.error("Error on event", err);
-  //     //Do something
-  //   });
-  // }
   filterOracleEvents() {
     console.log("filterOracleEvents");
     this.state.oracleContract.once(
@@ -308,13 +287,10 @@ class Bill extends Component {
           console.error("Error on event", err);
           return;
         } else {
-          //NEED THIS TO ONLY RUN ONCE.
-
-          console.log(event);
+          //console.log(event);
           await this.addRequestToQueue(event);
 
-          //IT IS GOING INTO HERE MULTIPLE TIMES!!!!
-          //console.log("entered filtered oracle events successfully");
+          //IT IS GOING INTO HERE MULTIPLE TIMES!!!! how did I fix this? with .once
         }
       }
     );
@@ -378,7 +354,6 @@ class Bill extends Component {
     const idInt = new BN(parseInt(id));
 
     console.log(ppiInt.toString(), callerAddress, idInt.toString());
-
     try {
       await this.state.oracleContract.methods
         .setLatestppi(ppiInt.toString(), callerAddress, idInt.toString())
@@ -396,8 +371,6 @@ class Bill extends Component {
     }
   }
 
-  //run processQueue when wanting to retrieve the ppi from API
-
   constructor(props) {
     super(props);
     this.state = {
@@ -409,10 +382,11 @@ class Bill extends Component {
       logs: [],
       loading: true,
       oracleAddress: "",
-      tempppi: 0,
+      tempppi: 257,
     };
     this.createBill = this.createBill.bind(this);
     this.setUnitPrice = this.setUnitPrice.bind(this);
+    this.setQuantity = this.setQuantity.bind(this);
     this.setOracleInstanceAddress = this.setOracleInstanceAddress.bind(this);
     this.processQueue = this.processQueue.bind(this);
   }
@@ -422,13 +396,29 @@ class Bill extends Component {
       <div>
         {this.state.loading ? (
           <div>
-            <p>loading...</p>
+            <p>loading from the blockchain...</p>
           </div>
         ) : (
           <React.Fragment>
+            <BillForm
+              bills={this.state.bills}
+              createBill={this.createBill}
+              tempppi={this.state.tempppi}
+            />
+            <p></p>
+            <h2>Bill table</h2>
+            <BillTable
+              bills={this.state.bills}
+              setUnitPrice={this.setUnitPrice}
+              setQuantity={this.setQuantity}
+            />
+            <p> </p>
+            <h2>Change log</h2>
+            <BillLog logs={this.state.logs} />
+            &nbsp;
             <div className="centeredDiv">
               {" "}
-              Oracle: {this.state.oracleAddress}
+              Oracle address: {this.state.oracleAddress}
               <br />
               ppi test: {this.state.tempppi}
               <Button
@@ -444,26 +434,15 @@ class Bill extends Component {
               <Button
                 onClick={(event) => {
                   {
-                    console.log("button pressed");
+                    console.log("button to update PPI (now eth) pressed!");
                     event.preventDefault();
                     this.updateppi();
                   }
                 }}
               >
-                Test
+                Update PPI
               </Button>
             </div>
-
-            <BillForm bills={this.state.bills} createBill={this.createBill} />
-            <p></p>
-            <h2>Bill table</h2>
-            <BillTable
-              bills={this.state.bills}
-              setUnitPrice={this.setUnitPrice}
-            />
-            <p> </p>
-            <h2>Change log</h2>
-            <BillLog logs={this.state.logs} />
           </React.Fragment>
         )}
       </div>

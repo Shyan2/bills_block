@@ -56,7 +56,7 @@ contract Bills is Ownable {
         uint256 _ppi
     ) public {
         billCount++;
-        uint256 _quantity = 1;
+        uint256 _quantity = 0;
         uint256 _unitPrice = 1;
 
         bills[billCount] = Bill(
@@ -87,10 +87,10 @@ contract Bills is Ownable {
     }
 
     function setQuantity(uint256 _billId, uint256 _newQuantity) public {
-        require(
-            msg.sender == bills[_billId].owner,
-            "Only the owner can set the quantity."
-        );
+        // require(
+        //     msg.sender == bills[_billId].owner,
+        //     "Only the owner can set the quantity."
+        // );
         bills[_billId].quantity = _newQuantity;
 
         emit SetQuantity(_billId, _newQuantity);
@@ -119,7 +119,7 @@ contract Bills is Ownable {
     }
 
     function callBack(uint256 _ppiPrice, uint256 _id) public onlyOracle {
-        require(myRequests[_id], "This request is not in my pending list.");
+        require(myRequests[_id], "This request is not in the pending list.");
         ppiPrice = _ppiPrice;
         delete myRequests[_id];
         emit PriceUpdatedEvent(_ppiPrice, _id);

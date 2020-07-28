@@ -3,13 +3,10 @@ import Web3 from "web3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
-import RoboGame from "../abis/Bills.json";
 
 import Navbar from "./Navbar";
-import RoboGameMain from "./robogame/RoboGameMain";
 import LogPage from "./bills/LogPage";
 import Bill from "./bills/Bill";
-import Form from "./forms/Form";
 import TableTest from "./others/TableTest";
 import Robots from "./robogame/Robots";
 import GetTest from "./rest/getTest";
@@ -64,7 +61,6 @@ class App extends Component {
               <Route path="/bill" component={Bill} />
               <Route path="/gettest" component={GetTest} />
               <Route path="/robots" component={Robots} />
-              )} />
             </Switch>
           </div>
         </Router>
