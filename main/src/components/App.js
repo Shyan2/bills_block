@@ -7,8 +7,6 @@ import "./App.css";
 import Navbar from "./Navbar";
 import LogPage from "./bills/LogPage";
 import Bill from "./bills/Bill";
-import TableTest from "./others/TableTest";
-import Robots from "./robogame/Robots";
 import GetTest from "./rest/getTest";
 
 import UserForm from "./forms/UserForm";
@@ -56,11 +54,9 @@ class App extends Component {
           <div className="nav-padding">
             <Switch>
               <Route path="/userform" component={UserForm} />
-              <Route path="/TableTest" component={TableTest} />
               <Route exact path="/log" component={LogPage} />
               <Route path="/bill" component={Bill} />
               <Route path="/gettest" component={GetTest} />
-              <Route path="/robots" component={Robots} />
             </Switch>
           </div>
         </Router>

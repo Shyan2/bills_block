@@ -3,53 +3,6 @@ import Web3 from "web3";
 import Bills from "../../abis/Bills.json";
 import "../App.css";
 
-import BillTable from "./BillTable";
-import BillForm from "./BillForm";
-
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-
-function createData(
-  ID,
-  section,
-  component,
-  item,
-  unit,
-  quantity,
-  unitPrice,
-  total
-) {
-  return {
-    ID,
-    section,
-    component,
-    item,
-    unit,
-    quantity,
-    unitPrice,
-    total,
-  };
-}
-
-const rows = [
-  createData(
-    "0",
-    "Test Section",
-    "Test Component",
-    "Test item description",
-    "Test unit",
-    "2",
-    "100",
-    "200"
-  ),
-];
-
 class LogPage extends Component {
   async componentWillMount() {
     //wait for it to happen before doing anything else

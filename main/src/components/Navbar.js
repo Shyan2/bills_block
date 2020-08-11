@@ -14,21 +14,18 @@ class Navbar extends Component {
           Bill of Quantities
         </a>
         <ul className="nav-links">
-          <Link style={navStyle} to="/TableTest">
+          {/* <Link style={navStyle} to="/TableTest">
             <li>Table test</li>
           </Link>
           <Link style={navStyle} to="/log">
             <li>Log</li>
-          </Link>
+          </Link> */}
           <Link style={navStyle} to="/bill">
             <li>Bill</li>
           </Link>
           {/* <Link style={navStyle} to="/gettest">
             <li>GET TEST</li>
           </Link> */}
-          <Link style={navStyle} to="/robots">
-            <li>Robots</li>
-          </Link>
           {/* <Link style={navStyle} to="/userform">
             <li>User Form</li>
           </Link> */}
@@ -40,7 +37,7 @@ class Navbar extends Component {
               <small id="account">{this.props.account}</small>
             </small>
             {this.props.account ? (
-              <img //check video for explanation for this
+              <img
                 className="ml-2"
                 width="30"
                 height="30"
